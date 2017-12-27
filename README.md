@@ -166,7 +166,7 @@ Payload
 
 Parameter| Type    | Required | Description
 ---------|---------|----------|------------
-pin      | String  | Yes      |     
+pin      | String  | Yes      | user pin    
 
             
 + Request (application/json)
@@ -270,12 +270,12 @@ use this api to transfer your cash to another user.
 
 Payload
 
-Parameter| Type    | Required | Description
----------|---------|----------|------------
-to_phone | string  | Yes      | beneficiary phone number  
-amount   | integer | Yes      | transfer amount  
-currency | string  | Yes      | currency symbol
-notes    | string  | No       | transfer note  
+Parameter | Type    | Required | Description
+----------|---------|----------|------------
+to_phone  | string  | Yes      | beneficiary phone number  
+amount    | integer | Yes      | transfer amount  
+currency  | string  | Yes      | currency symbol
+notes     | string  | No       | transfer note  
 
 + Request (application/json)
 
