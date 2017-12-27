@@ -1,6 +1,4 @@
-FORMAT: 1A
-
-#ODEO eMoney API
+# ODEO eMoney API
  This blueprint explain how to implement basic and primary transaction to ODEO eMoney API.
  
  
@@ -12,6 +10,7 @@ FORMAT: 1A
  
 ### Platform ID
 Platform ID is required to determine the client platform as following:
+
 Code  | Description
 ------|------------
 1     | Android
