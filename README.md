@@ -27,7 +27,8 @@ Content-Type      | String  | Yes      | Application/json | used to indicate the
 
 The response of this api will have a token which will be used to authorize particular api call.
 
-- Payload
+Payload
+
 Parameter         | Type    | Required | Description
 ------------------|---------|----------|------------
 phone_number      | String  | Yes      |
@@ -120,14 +121,15 @@ The value should be either:
 use this API to register new user.  
 
 Payload
-    Parameter        | Type    | Required | Description
-    -----------------|---------|----------|------------
-    phone_number     | String  | Yes      |
-    email            | String  | Yes      |
-    name             | Integer | Yes      | 
-    password         | String  | Yes      |
-    confirm_password | Integer | Yes      | 
-    platform_id      | Integer | Yes      | see Platform ID Section
+
+Parameter        | Type    | Required | Description
+-----------------|---------|----------|------------
+phone_number     | String  | Yes      |
+email            | String  | Yes      |
+name             | Integer | Yes      | 
+password         | String  | Yes      |
+confirm_password | Integer | Yes      | 
+platform_id      | Integer | Yes      | see Platform ID Section
   
 + Request (application/json)
 
