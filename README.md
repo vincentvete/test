@@ -28,11 +28,11 @@ Content-Type      | String  | Yes      | Application/json | used to indicate the
 The response of this api will have a token which will be used to authorize particular api call.
 
 - Payload
-    Parameter         | Type    | Required | Description
-    ------------------|---------|----------|------------
-    phone_number      | String  | Yes      |
-    password          | String  | Yes      |
-    platform_id       | Integer | Yes      | see Platform ID Section
+Parameter         | Type    | Required | Description
+------------------|---------|----------|------------
+phone_number      | String  | Yes      |
+password          | String  | Yes      |
+platform_id       | Integer | Yes      | see Platform ID Section
     
 + Request (application/json)
 
@@ -61,11 +61,12 @@ This api should be called if response of api returns 401.
 Refresh token will be revalidated and new token will be returned.
 
 - Payload
+
     Parameter         | Type    | Required | Description
     ------------------|---------|----------|------------
     user_id           | Integer | Yes      | 
     refresh_token     | String  | Yes      |
- 
+
  + Request (application/json)
 
         {
@@ -118,8 +119,7 @@ The value should be either:
 
 use this API to register new user.  
 
-- Payload
-
+Payload
     Parameter        | Type    | Required | Description
     -----------------|---------|----------|------------
     phone_number     | String  | Yes      |
