@@ -32,7 +32,6 @@ Content-Type      | String  | Yes      | Application/json | used to indicate the
 The response of this api will have a token which will be used to authorize particular api call.
 
 - Payload
-
     Parameter         | Type    | Required | Description
     ------------------|---------|----------|------------
     phone_number      | String  | Yes      |
@@ -65,8 +64,7 @@ The response of this api will have a token which will be used to authorize parti
 This api should be called if response of api returns 401. 
 Refresh token will be revalidated and new token will be returned.
 
-- Parameter Requirement
-
+- Payload
     Parameter         | Type    | Required | Description
     ------------------|---------|----------|------------
     user_id           | Integer | Yes      | 
@@ -92,6 +90,7 @@ Refresh token will be revalidated and new token will be returned.
 ### OTP Verification [POST /user/verify]
 
 Send an otp token to user based on phone number.
+
 
 Parameter         | Type    | Required | Description
 ------------------|---------|----------|------------
