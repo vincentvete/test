@@ -61,12 +61,12 @@ platform_id       | Integer | Yes      | see Platform ID Section
 This api should be called if response of api returns 401. 
 Refresh token will be revalidated and new token will be returned.
 
-- Payload
+Payload
 
-    Parameter         | Type    | Required | Description
-    ------------------|---------|----------|------------
-    user_id           | Integer | Yes      | 
-    refresh_token     | String  | Yes      |
+Parameter         | Type    | Required | Description
+------------------|---------|----------|------------
+user_id           | Integer | Yes      | 
+refresh_token     | String  | Yes      |
 
  + Request (application/json)
 
@@ -162,12 +162,12 @@ use to revalidate user in case of inactivity.
 
 * required autorization header
 
-- Payload
+Payload
 
-    Parameter| Type    | Required | Description
-    ---------|---------|----------|------------
-    pin      | String  | Yes      |     
-    
+Parameter| Type    | Required | Description
+---------|---------|----------|------------
+pin      | String  | Yes      |     
+
             
 + Request (application/json)
 
@@ -268,14 +268,14 @@ use this api to transfer your cash to another user.
 
 * required autorization header
 
-- Payload
+Payload
 
-    Parameter| Type    | Required | Description
-    ---------|---------|----------|------------
-    to_phone | string  | Yes      | beneficiary phone number  
-    amount   | integer | Yes      | transfer amount  
-    currency | string  | Yes      | currency symbol
-    notes    | string  | No       | transfer note  
+Parameter| Type    | Required | Description
+---------|---------|----------|------------
+to_phone | string  | Yes      | beneficiary phone number  
+amount   | integer | Yes      | transfer amount  
+currency | string  | Yes      | currency symbol
+notes    | string  | No       | transfer note  
 
 + Request (application/json)
 
@@ -303,11 +303,12 @@ Use the order id to continue the payment flow.
 
 * required autorization header
 
-- Payload
-    Parameter     | Type    | Required | Description
-    --------------|---------|----------|------------
-    cash.amount   | string  | Yes      | topup amount  
-    cash.currency | string  | Yes      | topup currency 
+Payload
+
+Parameter     | Type    | Required | Description
+--------------|---------|----------|------------
+cash.amount   | string  | Yes      | topup amount  
+cash.currency | string  | Yes      | topup currency 
 
 + Request (application/json)
 
@@ -383,11 +384,12 @@ Response will have usable data for payment confirmation.
 
 * required autorization header
 
-- Payload
-    Parameter| Type    | Required | Description
-    ---------|---------|----------|------------
-    order_id | integer | Yes      |   
-    opc      | integer | Yes      | payment method ID
+Payload
+
+Parameter| Type    | Required | Description
+---------|---------|----------|------------
+order_id | integer | Yes      |   
+opc      | integer | Yes      | payment method ID
 
 + Request (application/json)
 
@@ -425,10 +427,11 @@ Use this api to commit selected payment.
 
 * required autorization header
 
-- Payload
-    Parameter| Type    | Required | Description
-    ---------|---------|----------|------------
-    order_id | integer | Yes      |   
+Payload
+
+Parameter| Type    | Required | Description
+---------|---------|----------|------------
+order_id | integer | Yes      |   
 
 + Request (application/json)
 
@@ -450,13 +453,14 @@ Use this api to fill confirmation data if the user has transferred to the bank.
 
 * required autorization header
 
-- Payload
-    Parameter           | Type    | Required | Description
-    --------------------|---------|----------|------------
-    order_id            | integer | Yes      |   
-    confirmation_number | string  | Yes      |   
-    confirmation_name   | string  | Yes      |   
-    confirmation_amount | integer | Yes      |   
+Payload
+
+Parameter           | Type    | Required | Description
+--------------------|---------|----------|------------
+order_id            | integer | Yes      |   
+confirmation_number | string  | Yes      |   
+confirmation_name   | string  | Yes      |   
+confirmation_amount | integer | Yes      |   
 
 + Request (application/json)
 
@@ -481,10 +485,11 @@ Use this api to erase filled confirmation data.
 
 * required autorization header
 
-- Payload
-    Parameter           | Type    | Required | Description
-    --------------------|---------|----------|------------
-    order_id            | integer | Yes      |   
+Payload
+
+Parameter           | Type    | Required | Description
+--------------------|---------|----------|------------
+order_id            | integer | Yes      |   
 
 + Request (application/json)
 
@@ -562,10 +567,11 @@ Use this api to cancel created order by order ID.
 
 * required autorization header
 
-- Payload
-    Parameter           | Type    | Required | Description
-    --------------------|---------|----------|------------
-    order_id            | integer | Yes      |   
+Payload
+
+Parameter           | Type    | Required | Description
+--------------------|---------|----------|------------
+order_id            | integer | Yes      |   
 
 + Parameters
     + order_id (number)
@@ -619,13 +625,14 @@ Use this API to request a new withdraw.
 
 * required autorization header
 
-- Payload
-    Parameter           | Type    | Required | Description
-    --------------------|---------|----------|------------
-    bank_account_id     | integer | Yes      |  
-    cash.amount         | integer | Yes      |  
-    cash.currency       | string  | Yes      |  
-    pin                 | string  | Yes      |  
+Payload
+
+Parameter           | Type    | Required | Description
+--------------------|---------|----------|------------
+bank_account_id     | integer | Yes      |  
+cash.amount         | integer | Yes      |  
+cash.currency       | string  | Yes      |  
+pin                 | string  | Yes      |  
 
 + Request (application/json)
 
@@ -665,11 +672,12 @@ Use this api to update user account data.
 
 * required autorization header
 
-- Payload
-    Parameter| Type   | Required | Description
-    ------------------|----------|----------
-    name     | string | Yes      |  
-    email    | string | Yes      |  
+Payload
+
+Parameter| Type   | Required | Description
+------------------|----------|----------
+name     | string | Yes      |  
+email    | string | Yes      |  
 
 + Request (application/json)
 
@@ -756,11 +764,12 @@ use this api to create user bank account data. This data will be used to user wi
 
 * required autorization header
 
-- Payload
-    Parameter       | Type      | Required | Description
-    ----------------|-----------|----------|------------
-    bank_id         | string    | Yes      |  
-    account_name    | string    | Yes      |  
+Payload
+
+Parameter       | Type      | Required | Description
+----------------|-----------|----------|------------
+bank_id         | string    | Yes      |  
+account_name    | string    | Yes      |  
 
 + Request (application/json)
 
@@ -784,10 +793,11 @@ use this api to delete created user bank account.
 
 * required autorization header
 
-- Payload
-    Parameter       | Type      | Required | Description
-    ----------------|-----------|----------|------------
-    bank_account_id | string    | Yes      |  
+Payload
+
+Parameter       | Type      | Required | Description
+----------------|-----------|----------|------------
+bank_account_id | string    | Yes      |  
 
 + Request (application/json)
 
