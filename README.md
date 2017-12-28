@@ -1,10 +1,12 @@
 # ODEO eMoney API (v1.0.3)
-This blueprint only explain implementation of basic and primary transaction to ODEO eMoney API, thus does not cover full flow API explanation. Contact ODEO for further informations.
+ This blueprint explain how to implement basic and primary transaction to ODEO eMoney API.
  
  Communication to this set of API should use HTTPS protocol to ensure the request
  is encrypted. Primary transaction will require transaction pin validation to 
  meet security requirement, in case of security requirement does not match,
  transaction will be rejected.
+
+ 
 
 ### Platform ID
 Platform ID is required to determine the client platform as following:
