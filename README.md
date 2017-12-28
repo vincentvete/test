@@ -96,17 +96,11 @@ Parameter         | Type    | Required | Description
 ------------------|---------|----------|------------
 scenario          | string  | Yes      | 
 phone_number      | String  | Yes      |
-
-Scenario is required to determine the usage of verification was called. 
-The value should be either:
-1. forgot_password
-2. sign_up     
-    
     
 + Request (application/json)
 
         {
-            "scenario": "forgot_password",
+            "scenario": "sign_up",
             "phone_number": "08xxxxxxx"
         }       
     
@@ -117,7 +111,11 @@ The value should be either:
             "data": {},
             "message": ""
         }
-    
+        
+Scenario is required to determine the usage of verification was called. 
+The value should be either:
+1. forgot_password
+2. sign_up        
     
 ### Register [POST /user/register]
 
