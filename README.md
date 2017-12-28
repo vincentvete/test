@@ -70,7 +70,7 @@ Parameter         | Type    | Required | Description
 user_id           | Integer | Yes      | 
 refresh_token     | String  | Yes      |
 
- + Request (application/json)
++ Request (application/json)
 
         {
             "user_id": 1,
@@ -101,6 +101,7 @@ Scenario is required to determine the usage of verification was called.
 The value should be either:
 1. forgot_password
 2. sign_up     
+    
     
 + Request (application/json)
 
