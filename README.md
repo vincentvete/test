@@ -39,9 +39,10 @@ platform_id       | Integer | Yes      | see Platform ID Section
 + Request (application/json)
 
         {
-            "scenario": (forgot_password | sign_up),
-            "phone_number": "08xxxxxxx"
-        }       
+            "phone_number": "08xxxxxxx",
+            "password": "xxxxxx",
+            "platform_id": 1
+        }
     
 + Response 201 (application/json)
        
@@ -81,7 +82,7 @@ refresh_token     | String  | Yes      |
         {
             "status": "SUCCESS",
             "data": {
-                "token": xxx,
+                "token": "xxx",
             },
             "message": ""
         }
@@ -104,7 +105,7 @@ The value should be either:
 + Request (application/json)
 
         {
-            "scenario": (forgot_password | sign_up),
+            "scenario": "forgot_password",
             "phone_number": "08xxxxxxx"
         }       
     
@@ -119,15 +120,15 @@ The value should be either:
     
 ### Register [POST /user/register]
 
-use this API to register new user.  
+Use this API to register new user.  
 
 Request Payload Description
 
 Parameter        | Type    | Required | Description
 -----------------|---------|----------|------------
 phone_number     | String  | Yes      |
-email            | String  | Yes      |
-name             | Integer | Yes      | 
+name             | Integer | Yes      |
+email            | String  | Yes      | 
 password         | String  | Yes      |
 confirm_password | Integer | Yes      | 
 platform_id      | Integer | Yes      | see Platform ID Section
@@ -135,9 +136,9 @@ platform_id      | Integer | Yes      | see Platform ID Section
 + Request (application/json)
 
         {
-            "phone_number":"628xxxxxxx",
+            "phone_number":"08xxxxxxx",
             "name": "xxxx",
-            "email": "xxxx,
+            "email": "xxxx",
             "password": "123456",
             "confirm_password": "123456",
             "platform_id": 1
@@ -148,18 +149,16 @@ platform_id      | Integer | Yes      | see Platform ID Section
         {
             "status": "SUCCESS",
             "data": {
-                "token": xxx,
-                "token_refresh": xxx,
+                "token": "xxx",
+                "token_refresh": "xxx",
                 "user_id": xxx,
-                "email": xxx;
-                "phone_number": xxx;
             },
             "message": ""
         }    
   
 ### Check Password [POST /user/check-password]
 
-use to revalidate user in case of inactivity.
+Use to revalidate user in case of inactivity.
 
 * required autorization header
 
@@ -167,13 +166,13 @@ Request Payload Description
 
 Parameter| Type    | Required | Description
 ---------|---------|----------|------------
-pin      | String  | Yes      | user pin    
+password | String  | Yes      |    
 
             
 + Request (application/json)
 
         {
-            "pin": xxxxxx,
+            "password": xxxxxx,
         }  
         
 + Response 200 (application/json)
@@ -207,13 +206,13 @@ Use this api to retrieve user cash balance.
         
 ### get recent transactions [GET /user/recent-transactions?{limit}&{offset}]
 
-Use this api to retrieve user mutations.
+Use this api to retrieve user mutation.
 
 * required autorization header
 
 + Parameters
-    + offset (number) - start of row number.
-    + limit (number) -  limit retreived size.
+    + offset (integer) - start of row number.
+    + limit (integer) -  limit retrieved size.
         
 + Response 200 (application/json)
 
@@ -265,7 +264,7 @@ Use this api to inquiry data of user by phone number.
         
 ### Transfer [POST /user/cash/transfer]
 
-use this api to transfer your cash to another user.
+Use this api to transfer your cash to another user.
 
 * required autorization header
 
@@ -300,7 +299,7 @@ notes     | string  | No       | transfer note
 ### Create Top Up [POST /user/topup/create]
 
 Use this api to create topup order. The response will have an order id. 
-Use the order id to continue the payment flow.
+Use the order id to continue to payment flow.
 
 * required autorization header
 
@@ -337,7 +336,7 @@ Use this api to retrieve list of available payments.
 * required autorization header
 
 + Parameters
-    + order_id (number)
+    + order_id (integer)
         
 + Response 200 (application/json)
 
@@ -348,10 +347,10 @@ Use this api to retrieve list of available payments.
                     "opc": 18,
                     "name": "Bank Transfer Mandiri",
                     "detail": {
-                            "acc_bank": "Mandiri",
-                            "acc_name": "PT. xxx Indonesia",
-                            "acc_number": "xxx-xx-xx-xx-xx-xx",
-                            "acc_branch": "xxxx - Jakarta"
+                        "acc_bank": "Mandiri",
+                        "acc_name": "PT. xxx Indonesia",
+                        "acc_number": "xxx-xx-xx-xx-xx-xx",
+                        "acc_branch": "xxxx - Jakarta"
                     }
                 },
                 {
@@ -380,8 +379,8 @@ Use this api to retrieve list of available payments.
         
 ### Create Payment [POST /payment/request]
 
-Use this api to create payment. this will update the order with given payment method. 
-Response will have usable data for payment confirmation. 
+Use this api to create payment. This will update the order with given payment method. 
+Response will have usable data for payment commit. 
 
 * required autorization header
 
@@ -430,9 +429,9 @@ Use this api to commit selected payment.
 
 Request Payload Description
 
-Parameter| Type    | Required | Description
----------|---------|----------|------------
-order_id | integer | Yes      |   
+Parameter | Type    | Required | Description
+----------|---------|----------|------------
+order_id  | integer | Yes      |   
 
 + Request (application/json)
 
@@ -508,12 +507,12 @@ order_id            | integer | Yes      |
         
 ### get order by ID [GET /order/{order_id}]
 
-Use this api to retreive the detail of order by order ID.
+Use this api to retrieve the detail of order by order ID.
 
 * required autorization header
 
 + Parameters
-    + order_id (number)
+    + order_id (integer)
         
 + Response 200 (application/json)
 
@@ -575,7 +574,7 @@ Parameter           | Type    | Required | Description
 order_id            | integer | Yes      |   
 
 + Parameters
-    + order_id (number)
+    + order_id (integer)
 
 + Request (application/json)
 
@@ -594,7 +593,7 @@ order_id            | integer | Yes      |
         
 ### get last withdrawal [GET /user/withdraw]
 
-Use this api to retreive last pending withdrawal detail.
+Use this api to retrieve last pending withdrawal detail.
 
 * required autorization header
 
@@ -691,14 +690,13 @@ email    | string | Yes      |
 
         {
             "status": "SUCCESS",
-            "data": {
-            },
+            "data": {},
             "message": ""
         }       
 
 ### get bank list [GET /banks]
 
-Use this api to retreive list of available banks.
+Use this api to retrieve list of available banks.
 
 + Response 200 (application/json)
 
@@ -728,7 +726,7 @@ Use this api to retreive list of available banks.
         
 ### get user bank account list [GET /user/bank-account]
 
-Use this api to retreive user created bank account data.
+Use this api to retrieve user created bank account data.
 
 * required autorization header
 
@@ -761,7 +759,7 @@ Use this api to retreive user created bank account data.
         
 ### create user bank account [POST /user/bank-account/create]
 
-use this api to create user bank account data. This data will be used to user withdrawal.
+Use this api to create user bank account data. This data will be used for user withdrawal.
 
 * required autorization header
 
@@ -769,8 +767,9 @@ Request Payload Description
 
 Parameter       | Type      | Required | Description
 ----------------|-----------|----------|------------
-bank_id         | string    | Yes      |  
+bank_id         | integer   | Yes      |  
 account_name    | string    | Yes      |  
+account_number  | string    | Yes      |  
 
 + Request (application/json)
 
@@ -790,7 +789,7 @@ account_name    | string    | Yes      |
         
 ### delete user bank account [POST /user/bank-account/delete]
 
-use this api to delete created user bank account.
+Use this api to delete created user bank account.
 
 * required autorization header
 
@@ -798,7 +797,7 @@ Request Payload Description
 
 Parameter       | Type      | Required | Description
 ----------------|-----------|----------|------------
-bank_account_id | string    | Yes      |  
+bank_account_id | integer   | Yes      |  
 
 + Request (application/json)
 
