@@ -409,7 +409,7 @@ opc      | integer | Yes      | payment method ID
                         "1_text": "xxx"
                     },
                     {
-                        "1_texr": "xxx"
+                        "1_text": "xxx"
                     }
                 ],
                 "content": {
