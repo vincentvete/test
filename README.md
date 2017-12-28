@@ -1,12 +1,11 @@
 # ODEO eMoney API (v1.0.3)
- This blueprint explain how to implement basic and primary transaction to ODEO eMoney API.
+This blueprint only explain implementation of basic and primary transaction to ODEO eMoney API, thus does not cover full flow API explanation. Contact ODEO for further informations.
  
  Communication to this set of API should use HTTPS protocol to ensure the request
  is encrypted. Primary transaction will require transaction pin validation to 
  meet security requirement, in case of security requirement does not match,
  transaction will be rejected.
- 
- 
+
 ### Platform ID
 Platform ID is required to determine the client platform as following:
 
@@ -27,7 +26,7 @@ Content-Type      | String  | Yes      | Application/json | used to indicate the
 
 The response of this api will have a token which will be used to authorize particular api call.
 
-Payload
+Request Payload Description
 
 Parameter         | Type    | Required | Description
 ------------------|---------|----------|------------
@@ -61,7 +60,7 @@ platform_id       | Integer | Yes      | see Platform ID Section
 This api should be called if response of api returns 401. 
 Refresh token will be revalidated and new token will be returned.
 
-Payload
+Request Payload Description
 
 Parameter         | Type    | Required | Description
 ------------------|---------|----------|------------
@@ -120,7 +119,7 @@ The value should be either:
 
 use this API to register new user.  
 
-Payload
+Request Payload Description
 
 Parameter        | Type    | Required | Description
 -----------------|---------|----------|------------
@@ -162,7 +161,7 @@ use to revalidate user in case of inactivity.
 
 * required autorization header
 
-Payload
+Request Payload Description
 
 Parameter| Type    | Required | Description
 ---------|---------|----------|------------
@@ -268,7 +267,7 @@ use this api to transfer your cash to another user.
 
 * required autorization header
 
-Payload
+Request Payload Description
 
 Parameter | Type    | Required | Description
 ----------|---------|----------|------------
@@ -303,7 +302,7 @@ Use the order id to continue the payment flow.
 
 * required autorization header
 
-Payload
+Request Payload Description
 
 Parameter     | Type    | Required | Description
 --------------|---------|----------|------------
@@ -384,7 +383,7 @@ Response will have usable data for payment confirmation.
 
 * required autorization header
 
-Payload
+Request Payload Description
 
 Parameter| Type    | Required | Description
 ---------|---------|----------|------------
@@ -427,7 +426,7 @@ Use this api to commit selected payment.
 
 * required autorization header
 
-Payload
+Request Payload Description
 
 Parameter| Type    | Required | Description
 ---------|---------|----------|------------
@@ -453,7 +452,7 @@ Use this api to fill confirmation data if the user has transferred to the bank.
 
 * required autorization header
 
-Payload
+Request Payload Description
 
 Parameter           | Type    | Required | Description
 --------------------|---------|----------|------------
@@ -485,7 +484,7 @@ Use this api to erase filled confirmation data.
 
 * required autorization header
 
-Payload
+Request Payload Description
 
 Parameter           | Type    | Required | Description
 --------------------|---------|----------|------------
@@ -567,7 +566,7 @@ Use this api to cancel created order by order ID.
 
 * required autorization header
 
-Payload
+Request Payload Description
 
 Parameter           | Type    | Required | Description
 --------------------|---------|----------|------------
@@ -625,7 +624,7 @@ Use this API to request a new withdraw.
 
 * required autorization header
 
-Payload
+Request Payload Description
 
 Parameter           | Type    | Required | Description
 --------------------|---------|----------|------------
@@ -672,7 +671,7 @@ Use this api to update user account data.
 
 * required autorization header
 
-Payload
+Request Payload Description
 
 Parameter| Type   | Required | Description
 ------------------|----------|----------
@@ -764,7 +763,7 @@ use this api to create user bank account data. This data will be used to user wi
 
 * required autorization header
 
-Payload
+Request Payload Description
 
 Parameter       | Type      | Required | Description
 ----------------|-----------|----------|------------
@@ -793,7 +792,7 @@ use this api to delete created user bank account.
 
 * required autorization header
 
-Payload
+Request Payload Description
 
 Parameter       | Type      | Required | Description
 ----------------|-----------|----------|------------
