@@ -43,7 +43,7 @@ platform_id       | Integer | Yes      | see Platform ID Section
             "phone_number": "08xxxxxxx"
         }       
     
-+ Response 200 (application/json)
++ Response 201 (application/json)
        
         {
             "status": "SUCCESS",
@@ -76,7 +76,7 @@ refresh_token     | String  | Yes      |
             "refresh_token": "xxxxx"
         }       
     
-+ Response 200 (application/json)
++ Response 201 (application/json)
        
         {
             "status": "SUCCESS",
@@ -108,7 +108,7 @@ The value should be either:
             "phone_number": "08xxxxxxx"
         }       
     
-+ Response 200 (application/json)
++ Response 201 (application/json)
        
         {
             "status": "SUCCESS",
@@ -143,7 +143,7 @@ platform_id      | Integer | Yes      | see Platform ID Section
             "platform_id": 1
         }       
           
-+ Response 200 (application/json)
++ Response 201 (application/json)
        
         {
             "status": "SUCCESS",
@@ -320,7 +320,7 @@ cash.currency | string  | Yes      | topup currency
            }
         }  
         
-+ Response 200 (application/json)
++ Response 201 (application/json)
 
         {
             "status": "SUCCESS",
@@ -726,7 +726,7 @@ Use this api to retreive list of available banks.
             "message": ""
         }
         
-### get bank list [GET /user/bank-account]
+### get user bank account list [GET /user/bank-account]
 
 Use this api to retreive user created bank account data.
 
